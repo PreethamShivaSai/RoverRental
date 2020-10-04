@@ -459,6 +459,9 @@ hr {
 	.titleRR{
 		width: 70%;
 	}
+	.stitle{
+		font-size: 24px;
+	}
 	.r1,.r2,.r3,.r4,.r5{
 		width: 25%;
 	}
@@ -503,6 +506,9 @@ hr {
 @media(min-width: 431px) and (max-width: 529px){
 	.titleRR{
 		width: 70%;
+	}
+	.stitle{
+		font-size: 24px;
 	}
 	.r1,.r2,.r3,.r4,.r5{
 		width: 25%;
@@ -564,6 +570,9 @@ hr {
 	}
 	.r6,.r7,.r8,.r9,.r10{
 		display: none;
+	}
+	.stitle{
+		font-size: 24px;
 	}
 	.ocs{
 		display: none;
