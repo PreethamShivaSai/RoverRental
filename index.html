@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link rel="icon" href="https://img.icons8.com/windows/32/000000/moon-rover.png">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Rover rental</title>
+	<link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="rover.css">
+</head>
+<body>
+	<!-- <div class="bill">
+		<span>
+			Payment Details
+		</span>
+		<span>
+			Total cost:
+		</span>
+	</div> -->
+	<div class="cartlist" id="cartlist">
+		<!-- <span style="float: right;padding: 5px;margin: 5px;">
+			CART:
+		</span> -->
+		<button class="proceed" onclick="proceed()" >
+			Proceed to pay
+		</button>
+		<!-- <div class="i1" id="i1">
+			<div class="model">
+				<span class="c">
+					Rover1 (model1)
+				</span>
+			</div>
+			<div class="ofor">
+				<div class="tm">
+					<span class="d">
+						for 3 hr(s)
+					</span>
+				</div>
+				<hr>
+				<div style="display: flex;">
+					<div class="time" id="time">
+						
+					</div>
+					<div class="date" id="date">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr> -->
+	</div>
+	<div class="navbar" id="navbar">
+		<div class="titleRR" id="titleRR">
+			<div style="font-family: 'Sansita Swashed', cursive;">Rover Rental</div>
+			<div class="ocs1" id="ocs1">
+			<div class="cart" id="cart" onclick="cartl()">
+				Cart
+			</div>
+			<!-- <div class="orders" id="orders" onclick="ordersl()">
+				Orders
+			</div> -->
+			</div>
+		</div>
+		<div class="ocs" id="ocs">
+			<div class="cart" id="cart" onclick="cartl()">
+				Cart
+			</div>
+			<!-- <div class="orders" id="orders" onclick="ordersl()">
+				Orders
+			</div> -->
+		</div>
+	</div>
+	<div class="rtypes" id="rtypes">
+		<button class="r1" id="r1" onclick="selrover(1)">Rover 1</button>
+		<button class="r2" id="r2" onclick="selrover(2)">Rover 2</button>
+		<button class="r3" id="r3" onclick="selrover(3)">Rover 3</button>
+		<button class="r4" id="r4" onclick="selrover(4)">Rover 4</button>
+		<button class="r5" id="r5" onclick="selrover(5)">Rover 5</button>
+		<button class="r6" id="r6" onclick="selrover(6)">Rover 6</button>
+		<button class="r7" id="r7" onclick="selrover(7)">Rover 7</button>
+		<button class="r8" id="r8" onclick="selrover(8)">Rover 8</button>
+		<button class="r9" id="r9" onclick="selrover(9)">Rover 9</button>
+		<button class="r10" id="r10" onclick="selrover(10)">Rover 10</button>
+	</div>
+	<div class="added" id="added">
+		Added to cart
+	</div>
+	<div class="main" id="main">
+		<div class="cardet" id="cardt">
+			<div class="rvr1" id="rvr1" style="box-shadow: 0px 0px 3px 3px #bfbfbf;">
+				<img id="image" src="rover1.jpg" style="width: 100%">
+			</div>
+			<div class="rovd" id="rovd">
+				<hr>
+				<div class="rovname" id="rovname">
+					<span id="name" style="position: relative;top:35%; margin-left: 10px;margin-right: 10px">Rover 1</span>
+					<div>
+						
+					</div>
+				</div>
+
+				<div class="rovcost" id="rovcost">
+					
+				</div>
+			</div>
+			<div class="atc1" id="atc1" onclick="addtocart()">
+				<button class="atcb">Add To Cart</button>
+			</div>
+			<div class="ato1" id="ato1">
+				<button class="ptrb">Order Now</button>
+			</div>
+			<div class="specs" id="specs">
+				<span id="sp" class="sp">
+							Specifications
+						</span>
+						<br>
+						<br>
+						<ul class="speci" id="speci">
+							<li>Specification 1</li>
+							<li>Specification 2</li>
+							<li>Specification 3</li>
+							<li>Specification 4</li>
+							<li>Specification 5</li>
+						</ul>
+			</div>
+		</div>
+		<div class="chmain" id="chmain">
+			<div class="char" id="char">
+				<span id="name1" style="position: relative;top:10px; margin-left: 10px;margin-right: 10px">Rover 1</span>
+			</div>
+				<hr>
+
+			<div class="models" id="models">
+				<!-- <span style="font-weight: bold;font-size: 20px;">Model:</span> -->
+				<button class="m1" id="m1" onclick="modelsel(1)">Model1</button>
+				<button class="m2" id="m2" onclick="modelsel(2)">Model2</button>
+				<button class="m3" id="m3" onclick="modelsel(3)">Model3</button>
+				<button class="m4" id="m4" onclick="modelsel(4)">Model4</button>
+				<br>
+				<br>
+				<hr>
+				<div class="cost" id="cost">
+					<div class="cost1" id="cost1">
+						<div class="rc">
+							<span>
+								<label class="rcl" id="pricetag">Price(/h):</label><br><br>
+								<label class="rclp">1-5 hr(s):</label><label class="pval1" id="pval1" style="color: #e67300"> 120</label><br>
+								<label class="rclp">6-23 hr(s):</label><label class="pval6" id="pval6" style="color: #e67300"> 120</label><br>
+								<label class="rclp">>=24 hr(s):</label><label class="pval24" id="pval24" style="color: #e67300">;120</label><br>
+
+								<label class="rclp">Req for:</label><!-- <label class="pval12" id="pval12" style="color: #e67300"> &nbsp; &#x20B9;120</label> -->
+								<input type="number" name="text" id="text" class="text" autocomplete="off" min="0">
+								<br>
+							</span>
+						</div>
+						<div class="atc" id="atc">
+							<button class="atcb" id="atcb" onclick="addtocart()">Add To Cart</button>
+						</div>
+						<div class="ato" id="ato" onclick="order()">
+							<button class="ptrb">Order Now</button>
+						</div>
+					</div>
+					<div class="spl" id="spl">
+						<span id="sp" class="sp">
+							Specifications
+						</span>
+						<br>
+						<br>
+						<ul class="speci" id="speci">
+							<li>Specification 1</li>
+							<li>Specification 2</li>
+							<li>Specification 3</li>
+							<li>Specification 4</li>
+							<li>Specification 5</li>
+						</ul>
+					</div>
+				</div>
+				<hr>
+				
+			</div>
+		</div>
+	</div>
+	<div class="stitle" id="stitle">
+			Best suggestions for you!!
+	</div>
+	<div class="sugg" id="sugg">
+		
+		<div class="s1" onclick="selrover(1)">
+			<img src="r1.jpg" style="width: 100%">
+			<span style="margin-top: 5px;font-weight: bold;">
+				Rover 1
+			</span>
+		</div>
+		<div class="s2" onclick="selrover(2)">
+			<img src="r2.jpg" style="width: 100%">
+			<span style="margin-top: 5px;font-weight: bold;">
+				Rover 2
+			</span>
+		</div>		
+		<div class="s3" onclick="selrover(3)">
+			<img src="r3.jpg" style="width: 100%">
+			<span style="margin-top: 5px;font-weight: bold;">
+				Rover 3
+			</span>
+		</div>
+		<div class="s4" onclick="selrover(4)">
+			<img src="r4.jpg" style="width: 100%">
+			<span style="margin-top: 5px;font-weight: bold;">
+				Rover 4
+			</span>
+		</div>
+	</div>
+	<div class="sugg1" id="sugg1">
+		
+		<div class="s11" onclick="selrover(5)">
+			<img src="rover1.jpg" style="width: 100%">
+			<span style="margin-top: 5px;font-weight: bold;">
+				Rover 5
+			</span>
+		</div>
+		<div class="s12" onclick="selrover(6)">
+			<img src="rover2.jpg" style="width: 100%">
+			<span style="margin-top: 5px;font-weight: bold;">
+				Rover 6
+			</span>
+		</div>		
+		<div class="s13" onclick="selrover(7)">
+			<img src="rover3.jpg" style="width: 100%">
+			<span style="margin-top: 5px;font-weight: bold;">
+				Rover 7
+			</span>
+		</div>
+		<div class="s14" onclick="selrover(8)">
+			<img src="rover4.jpg" style="width: 100%">
+			<span style="margin-top: 5px;font-weight: bold;">
+				Rover 8
+			</span>
+		</div>
+	</div>
+	<script type="text/javascript">
+		document.getElementById("r1").style.borderBottomColor="red";
+		document.getElementById("r2").style.borderBottomColor="transparent";
+		document.getElementById("r3").style.borderBottomColor="transparent";
+		document.getElementById("r4").style.borderBottomColor="transparent";
+		document.getElementById("r5").style.borderBottomColor="transparent";
+		document.getElementById("r6").style.borderBottomColor="transparent";
+		document.getElementById("r7").style.borderBottomColor="transparent";
+		document.getElementById("r8").style.borderBottomColor="transparent";
+		document.getElementById("r9").style.borderBottomColor="transparent";
+		document.getElementById("r10").style.borderBottomColor="transparent";
+		localStorage.setItem("rovnum","1");
+		function selrover(num){
+			var mul;
+
+			if(num==1){
+				localStorage.setItem("model","model1");
+				localStorage.setItem("rovnum","1");
+				mul=parseInt(localStorage.getItem("rovnum"));
+				document.getElementById("m1").style.borderBottomColor = "red";
+				document.getElementById("m2").style.borderBottomColor = "transparent";
+				document.getElementById("m3").style.borderBottomColor = "transparent";
+				document.getElementById("m4").style.borderBottomColor = "transparent";
+				// .pval1,.pval6,.pval12,.pval24
+				document.getElementById("pval1").innerHTML=50*mul;
+				document.getElementById("pval6").innerHTML=40*mul;
+				// document.getElementById("pval12").innerHTML="&nbsp; &#x20B9; 230/-";
+				document.getElementById("pval24").innerHTML=30*mul;
+				document.getElementById("image").src="r1.jpg";
+				document.getElementById("name").innerHTML="Rover 1";
+				document.getElementById("name1").innerHTML="Rover 1";
+				document.getElementById("r1").style.borderBottomColor="red";
+				document.getElementById("r2").style.borderBottomColor="transparent";
+				document.getElementById("r3").style.borderBottomColor="transparent";
+				document.getElementById("r4").style.borderBottomColor="transparent";
+				document.getElementById("r5").style.borderBottomColor="transparent";
+				document.getElementById("r6").style.borderBottomColor="transparent";
+				document.getElementById("r7").style.borderBottomColor="transparent";
+				document.getElementById("r8").style.borderBottomColor="transparent";
+				document.getElementById("r9").style.borderBottomColor="transparent";
+				document.getElementById("r10").style.borderBottomColor="transparent";
+			}
+			else if(num==2){
+				localStorage.setItem("model","model1");
+				localStorage.setItem("rovnum","2");
+				mul=parseInt(localStorage.getItem("rovnum"));
+
+				document.getElementById("m1").style.borderBottomColor = "red";
+				document.getElementById("m2").style.borderBottomColor = "transparent";
+				document.getElementById("m3").style.borderBottomColor = "transparent";
+				document.getElementById("m4").style.borderBottomColor = "transparent";
+				// .pval1,.pval6,.pval12,.pval24
+				document.getElementById("pval1").innerHTML=50*mul;
+				document.getElementById("pval6").innerHTML=40*mul;
+				// document.getElementById("pval12").innerHTML="&nbsp; &#x20B9; 230/-";
+				document.getElementById("pval24").innerHTML=30*mul;
+				document.getElementById("name").innerHTML="Rover 2";
+				document.getElementById("name1").innerHTML="Rover 2";
+				document.getElementById("image").src="r2.jpg";
+				document.getElementById("r1").style.borderBottomColor="transparent";
+				document.getElementById("r2").style.borderBottomColor="red";
+				document.getElementById("r3").style.borderBottomColor="transparent";
+				document.getElementById("r4").style.borderBottomColor="transparent";
+				document.getElementById("r5").style.borderBottomColor="transparent";
+				document.getElementById("r6").style.borderBottomColor="transparent";
+				document.getElementById("r7").style.borderBottomColor="transparent";
+				document.getElementById("r8").style.borderBottomColor="transparent";
+				document.getElementById("r9").style.borderBottomColor="transparent";
+				document.getElementById("r10").style.borderBottomColor="transparent";
+			}
+			else if(num==3){
+				localStorage.setItem("model","model1");
+				localStorage.setItem("rovnum","3");
+				mul=parseInt(localStorage.getItem("rovnum"));
+				document.getElementById("m1").style.borderBottomColor = "red";
+				document.getElementById("m2").style.borderBottomColor = "transparent";
+				document.getElementById("m3").style.borderBottomColor = "transparent";
+				document.getElementById("m4").style.borderBottomColor = "transparent";
+				// .pval1,.pval6,.pval12,.pval24
+				document.getElementById("pval1").innerHTML=50*mul;
+				document.getElementById("pval6").innerHTML=40*mul;
+				// document.getElementById("pval12").innerHTML="&nbsp; &#x20B9; 230/-";
+				document.getElementById("pval24").innerHTML=30*mul;
+				document.getElementById("name").innerHTML="Rover 3";
+				document.getElementById("name1").innerHTML="Rover 3";
+				document.getElementById("image").src="r3.jpg";
+				document.getElementById("r1").style.borderBottomColor="transparent";
+				document.getElementById("r2").style.borderBottomColor="transparent";
+				document.getElementById("r3").style.borderBottomColor="red";
+				document.getElementById("r4").style.borderBottomColor="transparent";
+				document.getElementById("r5").style.borderBottomColor="transparent";
+				document.getElementById("r6").style.borderBottomColor="transparent";
+				document.getElementById("r7").style.borderBottomColor="transparent";
+				document.getElementById("r8").style.borderBottomColor="transparent";
+				document.getElementById("r9").style.borderBottomColor="transparent";
+				document.getElementById("r10").style.borderBottomColor="transparent";
+			}
+			else if(num==4){
+				localStorage.setItem("model","model1");
+				localStorage.setItem("rovnum","4");
+				mul=parseInt(localStorage.getItem("rovnum"));
+				document.getElementById("m1").style.borderBottomColor = "red";
+				document.getElementById("m2").style.borderBottomColor = "transparent";
+				document.getElementById("m3").style.borderBottomColor = "transparent";
+				document.getElementById("m4").style.borderBottomColor = "transparent";
+				// .pval1,.pval6,.pval12,.pval24
+				document.getElementById("pval1").innerHTML=50*mul;
+				document.getElementById("pval6").innerHTML=40*mul;
+				// document.getElementById("pval12").innerHTML="&nbsp; &#x20B9; 230/-";
+				document.getElementById("pval24").innerHTML=30*mul;
+				document.getElementById("name").innerHTML="Rover 4";
+				document.getElementById("name1").innerHTML="Rover 4";
+				document.getElementById("image").src="r4.jpg";
+				document.getElementById("r1").style.borderBottomColor="transparent";
+				document.getElementById("r2").style.borderBottomColor="transparent";
+				document.getElementById("r3").style.borderBottomColor="transparent";
+				document.getElementById("r4").style.borderBottomColor="red";
+				document.getElementById("r5").style.borderBottomColor="transparent";
+				document.getElementById("r6").style.borderBottomColor="transparent";
+				document.getElementById("r7").style.borderBottomColor="transparent";
+				document.getElementById("r8").style.borderBottomColor="transparent";
+				document.getElementById("r9").style.borderBottomColor="transparent";
+				document.getElementById("r10").style.borderBottomColor="transparent";
+			}
+			else if(num==5){
+				localStorage.setItem("model","model1");
+				localStorage.setItem("rovnum","5");
+				mul=parseInt(localStorage.getItem("rovnum"));
+				document.getElementById("m1").style.borderBottomColor = "red";
+				document.getElementById("m2").style.borderBottomColor = "transparent";
+				document.getElementById("m3").style.borderBottomColor = "transparent";
+				document.getElementById("m4").style.borderBottomColor = "transparent";
+				// .pval1,.pval6,.pval12,.pval24
+				document.getElementById("pval1").innerHTML=50*mul;
+				document.getElementById("pval6").innerHTML=40*mul;
+				// document.getElementById("pval12").innerHTML="&nbsp; &#x20B9; 230/-";
+				document.getElementById("pval24").innerHTML=30*mul;
+				document.getElementById("name").innerHTML="Rover 5";
+				document.getElementById("name1").innerHTML="Rover 5";
+				document.getElementById("image").src="rover1.jpg";
+				document.getElementById("r1").style.borderBottomColor="transparent";
+				document.getElementById("r2").style.borderBottomColor="transparent";
+				document.getElementById("r3").style.borderBottomColor="transparent";
+				document.getElementById("r4").style.borderBottomColor="transparent";
+				document.getElementById("r5").style.borderBottomColor="red";
+				document.getElementById("r6").style.borderBottomColor="transparent";
+				document.getElementById("r7").style.borderBottomColor="transparent";
+				document.getElementById("r8").style.borderBottomColor="transparent";
+				document.getElementById("r9").style.borderBottomColor="transparent";
+				document.getElementById("r10").style.borderBottomColor="transparent";
+			}
+			else if(num==6){
+				localStorage.setItem("model","model1");
+				localStorage.setItem("rovnum","6");
+				mul=parseInt(localStorage.getItem("rovnum"));
+				document.getElementById("m1").style.borderBottomColor = "red";
+				document.getElementById("m2").style.borderBottomColor = "transparent";
+				document.getElementById("m3").style.borderBottomColor = "transparent";
+				document.getElementById("m4").style.borderBottomColor = "transparent";
+				// .pval1,.pval6,.pval12,.pval24
+				document.getElementById("pval1").innerHTML=50*mul;
+				document.getElementById("pval6").innerHTML=40*mul;
+				// document.getElementById("pval12").innerHTML="&nbsp; &#x20B9; 230/-";
+				document.getElementById("pval24").innerHTML=30*mul;
+				document.getElementById("name").innerHTML="Rover 6";
+				document.getElementById("name1").innerHTML="Rover 6";
+				document.getElementById("image").src="rover2.jpg";
+				document.getElementById("r1").style.borderBottomColor="transparent";
+				document.getElementById("r2").style.borderBottomColor="transparent";
+				document.getElementById("r3").style.borderBottomColor="transparent";
+				document.getElementById("r4").style.borderBottomColor="transparent";
+				document.getElementById("r5").style.borderBottomColor="transparent";
+				document.getElementById("r6").style.borderBottomColor="red";
+				document.getElementById("r7").style.borderBottomColor="transparent";
+				document.getElementById("r8").style.borderBottomColor="transparent";
+				document.getElementById("r9").style.borderBottomColor="transparent";
+				document.getElementById("r10").style.borderBottomColor="transparent";
+			}
+			else if(num==7){
+				localStorage.setItem("model","model1");
+				localStorage.setItem("rovnum","7");
+				mul=parseInt(localStorage.getItem("rovnum"));
+				document.getElementById("m1").style.borderBottomColor = "red";
+				document.getElementById("m2").style.borderBottomColor = "transparent";
+				document.getElementById("m3").style.borderBottomColor = "transparent";
+				document.getElementById("m4").style.borderBottomColor = "transparent";
+				// .pval1,.pval6,.pval12,.pval24
+				document.getElementById("pval1").innerHTML=50*mul;
+				document.getElementById("pval6").innerHTML=40*mul;
+				// document.getElementById("pval12").innerHTML="&nbsp; &#x20B9; 230/-";
+				document.getElementById("pval24").innerHTML=30*mul;
+				document.getElementById("name").innerHTML="Rover 7";
+				document.getElementById("name1").innerHTML="Rover 7";
+				document.getElementById("image").src="rover3.jpg";
+				document.getElementById("r1").style.borderBottomColor="transparent";
+				document.getElementById("r2").style.borderBottomColor="transparent";
+				document.getElementById("r3").style.borderBottomColor="transparent";
+				document.getElementById("r4").style.borderBottomColor="transparent";
+				document.getElementById("r5").style.borderBottomColor="transparent";
+				document.getElementById("r6").style.borderBottomColor="transparent";
+				document.getElementById("r7").style.borderBottomColor="red";
+				document.getElementById("r8").style.borderBottomColor="transparent";
+				document.getElementById("r9").style.borderBottomColor="transparent";
+				document.getElementById("r10").style.borderBottomColor="transparent";
+			}
+			else if(num==8){
+				localStorage.setItem("model","model1");
+				localStorage.setItem("rovnum","8");
+				mul=parseInt(localStorage.getItem("rovnum"));
+				document.getElementById("m1").style.borderBottomColor = "red";
+				document.getElementById("m2").style.borderBottomColor = "transparent";
+				document.getElementById("m3").style.borderBottomColor = "transparent";
+				document.getElementById("m4").style.borderBottomColor = "transparent";
+				// .pval1,.pval6,.pval12,.pval24
+				document.getElementById("pval1").innerHTML=50*mul;
+				document.getElementById("pval6").innerHTML=40*mul;
+				// document.getElementById("pval12").innerHTML="&nbsp; &#x20B9; 230/-";
+				document.getElementById("pval24").innerHTML=30*mul;
+				document.getElementById("name").innerHTML="Rover 8";
+				document.getElementById("name1").innerHTML="Rover 8";
+				document.getElementById("image").src="rover4.jpg";
+				document.getElementById("r1").style.borderBottomColor="transparent";
+				document.getElementById("r2").style.borderBottomColor="transparent";
+				document.getElementById("r3").style.borderBottomColor="transparent";
+				document.getElementById("r4").style.borderBottomColor="transparent";
+				document.getElementById("r5").style.borderBottomColor="transparent";
+				document.getElementById("r6").style.borderBottomColor="transparent";
+				document.getElementById("r7").style.borderBottomColor="transparent";
+				document.getElementById("r8").style.borderBottomColor="red";
+				document.getElementById("r9").style.borderBottomColor="transparent";
+				document.getElementById("r10").style.borderBottomColor="transparent";
+			}
+			else if(num==9){
+				localStorage.setItem("model","model1");
+				localStorage.setItem("rovnum","9");
+				mul=parseInt(localStorage.getItem("rovnum"));
+				document.getElementById("m1").style.borderBottomColor = "red";
+				document.getElementById("m2").style.borderBottomColor = "transparent";
+				document.getElementById("m3").style.borderBottomColor = "transparent";
+				document.getElementById("m4").style.borderBottomColor = "transparent";
+				// .pval1,.pval6,.pval12,.pval24
+				document.getElementById("pval1").innerHTML=50*mul;
+				document.getElementById("pval6").innerHTML=40*mul;
+				// document.getElementById("pval12").innerHTML="&nbsp; &#x20B9; 230/-";
+				document.getElementById("pval24").innerHTML=30*mul;
+				document.getElementById("name").innerHTML="Rover 9";
+				document.getElementById("name1").innerHTML="Rover 9";
+				document.getElementById("image").src="r5.jpg";
+				document.getElementById("r1").style.borderBottomColor="transparent";
+				document.getElementById("r2").style.borderBottomColor="transparent";
+				document.getElementById("r3").style.borderBottomColor="transparent";
+				document.getElementById("r4").style.borderBottomColor="transparent";
+				document.getElementById("r5").style.borderBottomColor="transparent";
+				document.getElementById("r6").style.borderBottomColor="transparent";
+				document.getElementById("r7").style.borderBottomColor="transparent";
+				document.getElementById("r8").style.borderBottomColor="transparent";
+				document.getElementById("r9").style.borderBottomColor="red";
+				document.getElementById("r10").style.borderBottomColor="transparent";
+			}
+			else{
+				localStorage.setItem("model","model1");
+				localStorage.setItem("rovnum","10");
+				mul=parseInt(localStorage.getItem("rovnum"));
+				document.getElementById("m1").style.borderBottomColor = "red";
+				document.getElementById("m2").style.borderBottomColor = "transparent";
+				document.getElementById("m3").style.borderBottomColor = "transparent";
+				document.getElementById("m4").style.borderBottomColor = "transparent";
+				// .pval1,.pval6,.pval12,.pval24
+				document.getElementById("pval1").innerHTML=50*mul;
+				document.getElementById("pval6").innerHTML=40*mul;
+				// document.getElementById("pval12").innerHTML="&nbsp; &#x20B9; 230/-";
+				document.getElementById("pval24").innerHTML=30*mul;
+				document.getElementById("name").innerHTML="Rover 10";
+				document.getElementById("name1").innerHTML="Rover 10";
+				document.getElementById("image").src="r6.jpg";
+				document.getElementById("r1").style.borderBottomColor="transparent";
+				document.getElementById("r2").style.borderBottomColor="transparent";
+				document.getElementById("r3").style.borderBottomColor="transparent";
+				document.getElementById("r4").style.borderBottomColor="transparent";
+				document.getElementById("r5").style.borderBottomColor="transparent";
+				document.getElementById("r6").style.borderBottomColor="transparent";
+				document.getElementById("r7").style.borderBottomColor="transparent";
+				document.getElementById("r8").style.borderBottomColor="transparent";
+				document.getElementById("r9").style.borderBottomColor="transparent";
+				document.getElementById("r10").style.borderBottomColor="red";
+			}
+			document.body.scrollTop = 0;
+ 			document.documentElement.scrollTop = 0;
+		}
+	</script>
+	<!-- <script type="text/javascript">
+		var n=localStorage.getItem("rovnum");
+		if(n==1){
+			document.getElementById("image").src="rover1.jpg";
+		}
+		else{
+			document.getElementById("image").src="rover2.jpg";
+
+		}
+
+	</script> -->
+	<script type="text/javascript">
+		document.getElementById("m1").style.borderBottomColor="red";
+		document.getElementById("pval1").innerHTML="50";
+		document.getElementById("pval6").innerHTML="40";
+		// document.getElementById("pval12").innerHTML="&nbsp; &#x20B9; 230/-";
+		document.getElementById("pval24").innerHTML="30";
+		localStorage.setItem("model","model1");
+		function modelsel(num){
+			var mul=parseInt(localStorage.getItem("rovnum"));
+			if(num==1){
+				// alert('hi');
+				localStorage.setItem("model","model1");
+				document.getElementById("m1").style.borderBottomColor = "red";
+				document.getElementById("m2").style.borderBottomColor = "transparent";
+				document.getElementById("m3").style.borderBottomColor = "transparent";
+				document.getElementById("m4").style.borderBottomColor = "transparent";
+				// .pval1,.pval6,.pval12,.pval24
+				document.getElementById("pval1").innerHTML=50*mul;
+				document.getElementById("pval6").innerHTML=40*mul;
+				// document.getElementById("pval12").innerHTML="&nbsp; &#x20B9; 230/-";
+				document.getElementById("pval24").innerHTML=30*mul;
+			}
+			else if(num==2){
+				localStorage.setItem("model","model2");
+				document.getElementById("m1").style.borderBottomColor = "transparent";
+				document.getElementById("m2").style.borderBottomColor = "red";
+				document.getElementById("m3").style.borderBottomColor = "transparent";
+				document.getElementById("m4").style.borderBottomColor = "transparent";
+				document.getElementById("pval1").innerHTML=70*mul;
+				document.getElementById("pval6").innerHTML=60*mul;
+				// document.getElementById("pval12").innerHTML="&nbsp; &#x20B9; 270/-";
+				document.getElementById("pval24").innerHTML=50*mul;
+			}
+			else if(num==3){
+				localStorage.setItem("model","model3");
+				document.getElementById("m1").style.borderBottomColor = "transparent";
+				document.getElementById("m2").style.borderBottomColor = "transparent";
+				document.getElementById("m3").style.borderBottomColor = "red";
+				document.getElementById("m4").style.borderBottomColor = "transparent";
+				document.getElementById("pval1").innerHTML=40*mul;
+				document.getElementById("pval6").innerHTML=30*mul;
+				// document.getElementById("pval12").innerHTML="&nbsp; &#x20B9; 140/-";
+				document.getElementById("pval24").innerHTML=25*mul;
+			}
+			else{
+				localStorage.setItem("model","model4");
+				document.getElementById("m1").style.borderBottomColor = "transparent";
+				document.getElementById("m2").style.borderBottomColor = "transparent";
+				document.getElementById("m3").style.borderBottomColor = "transparent";
+				document.getElementById("m4").style.borderBottomColor = "red";
+				document.getElementById("pval1").innerHTML=80*mul;
+				document.getElementById("pval6").innerHTML=65*mul;
+				// document.getElementById("pval12").innerHTML="&nbsp; &#x20B9; 540/-";
+				document.getElementById("pval24").innerHTML=50*mul;
+			}
+		}
+	</script>
+	<script type="text/javascript">
+		var temp1="";
+		var total=parseInt("0");
+		var tot;
+		function addtocart(){
+			var t=document.getElementById("text").value;
+			// alert(t);
+			if(t.length==0){
+				t=parseInt("1");
+			}
+			else{
+				t=parseInt(document.getElementById("text").value);
+			}
+			// alert(t);
+			var nd=document.createElement('div');
+			var nd1=document.createElement('div');
+			var nd2=document.createElement('div');
+			var nd3=document.createElement('div');
+			var nd4=document.createElement('div');
+			var nd5=document.createElement('div');
+			var nd6=document.createElement('div');
+			var nd7=document.createElement('hr');
+			var nd8=document.createElement('hr');
+			var sp1=document.createElement('span');
+			var sp2=document.createElement('span');
+			nd.setAttribute("class", "i1");
+			nd.setAttribute("id", "i1");
+			nd1.setAttribute("class","model");
+			nd2.setAttribute("class", "ofor");
+			nd3.setAttribute("class", "tm");
+			nd4.setAttribute("class", "t");
+			nd5.setAttribute("class", "time");
+			nd6.setAttribute("class", "date");
+			sp1.setAttribute("class","c");
+			sp1.innerHTML="Rover "+localStorage.getItem("rovnum")+"("+localStorage.getItem('model')+")";
+			sp2.setAttribute("class","d");
+			sp2.innerHTML="for "+t+" hr(s)";
+			nd.appendChild(nd1);
+			nd.appendChild(nd2);
+			nd1.appendChild(sp1);
+			
+			nd2.appendChild(nd3);
+			nd2.appendChild(nd4);
+			nd3.appendChild(sp2);
+			// nd2.appendChild(nd7);
+			nd4.appendChild(nd5);
+			nd4.appendChild(nd6);
+			document.getElementById("cartlist").appendChild(nd);
+			document.getElementById("cartlist").appendChild(nd8);
+			n =  new Date();
+			y = n.getFullYear();
+			m = n.getMonth() + 1;
+			d = n.getDate();
+			h=n.getHours();
+			min=n.getMinutes();
+			sec=n.getSeconds();
+			nd6.innerHTML = m + "/" + d + "/" + y;
+			nd5.innerHTML = h+":"+min+":"+sec;
+			document.getElementById("added").style.opacity = '0';
+		    document.getElementById("added").style.opacity = '.6';
+			setTimeout(function(){
+			    document.getElementById("added").style.opacity = '0';
+			}, 1500);
+			// var temp=document.getElementsByClassName("i1");
+			if(t<6){
+				tot=parseInt(document.getElementById("pval1").innerHTML);
+				tot=tot*t;
+			}
+			else if(t>=6 && t<24){
+				tot=parseInt(document.getElementById("pval6").innerHTML);
+				tot=tot*t;
+			}
+			else{
+				tot=parseInt(document.getElementById("pval24").innerHTML);
+				tot=tot*t;
+			}
+			total=parseInt(total)+parseInt(tot);
+			temp1=temp1+sp1.innerHTML+sp2.innerHTML+" ("+nd6.innerHTML+" "+nd5.innerHTML+")"+" cost:"+tot+"<br>";
+			localStorage.setItem("inner",temp1);
+			localStorage.setItem("totalcost",total);
+		}
+	</script>
+	<script type="text/javascript">
+		document.getElementById("cartlist").style.height="0px";
+		var v=document.getElementById("cartlist")
+
+		function cartl(){
+			// if (document.getElementById("cartlist").style.height=="0") {
+			// 	document.getElementById("cartlist").style.position="Fixed";
+			// 	document.getElementById("cartlist").style.height="auto";
+			// }
+			// else
+			// {
+			// 	document.getElementById("cartlist").style.position="relative";
+			// 	document.getElementById("cartlist").style.height="0";
+			// }
+			if(document.getElementById("cartlist").style.height=="0px"){
+				document.getElementById("cartlist").style.border="2px solid white";
+				// document.getElementById("cartlist").style.position="Fixed";
+				document.getElementById("cartlist").style.height="370px";
+			}
+			else{
+				// document.getElementById("cartlist").style.position="relative";
+				document.getElementById("cartlist").style.height="0";
+				document.getElementById("cartlist").style.border="0px";
+			}
+		}
+	</script>
+	<script type="text/javascript">
+		// var temp=document.getElementsByClassName("i1");
+		// var temp1=temp.innerHTML;
+		// localStorage.setItem("inner",temp1);
+		function order(){
+			var t=document.getElementById("text").value;
+			// alert(t);
+			if(t.length==0){
+				t=parseInt("1");
+			}
+			else{
+				t=parseInt(document.getElementById("text").value);
+			}
+			if(t<6){
+				tot=parseInt(document.getElementById("pval1").innerHTML);
+				tot=tot*t;
+			}
+			else if(t>=6 && t<24){
+				tot=parseInt(document.getElementById("pval6").innerHTML);
+				tot=tot*t;
+			}
+			else{
+				tot=parseInt(document.getElementById("pval24").innerHTML);
+				tot=tot*t;
+			}
+			n =  new Date();
+			y = n.getFullYear();
+			m = n.getMonth() + 1;
+			d = n.getDate();
+			h=n.getHours();
+			min=n.getMinutes();
+			sec=n.getSeconds();
+			var tempr=document.getElementById("name").innerHTML+" "+"("+localStorage.getItem("model")+") "+"for "+t+"hr(s) ("+m + "/" + d + "/" + y+" "+h+":"+min+":"+sec+")"+" cost: "+tot;
+			localStorage.setItem("inner",tempr);
+			localStorage.setItem("total",tot);
+			window.open("bill.html");
+		}
+	</script>
+	<script type="text/javascript">
+		function proceed(){
+			window.open("bill.html");
+		}
+	</script>
+</body>
+</html>
+<!-- <div class="i1" id="i1">
+	<div class="model">
+		<span class="c">
+			Rover1 (model1)
+		</span>
+	</div>
+	<div class="ofor">
+		<div class="tm">
+			<span class="d">
+				for 3 hr(s)
+			</span>
+		</div>
+		<hr>
+		<div style="display: flex;" class="t">
+			<div class="time" id="time">
+				
+			</div>
+			<div class="date" id="date">
+				
+			</div>
+		</div>
+	</div>
+</div>
+<hr> -->

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" href="https://img.icons8.com/windows/32/000000/moon-rover.png">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Rover rental|Bill</title>
+	<link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="rover.css">
+</head>
+<body>
+	<div class="bill">
+		<span style="font-size: 30px;">
+			Payment
+		</span>
+		<div class="bill12" id="bill12" style="margin: 10px;">
+			
+		</div>
+		<div class="total" id="total" style="text-align: center; font-family: 'Sansita Swashed', cursive;font-size: 25px;margin: 10px; ">
+			
+		</div>
+	</div>
+	<script type="text/javascript">
+		var temp1=localStorage.getItem("inner");
+		var temp2=localStorage.getItem("totalcost");
+		document.getElementById("bill12").innerHTML=temp1;
+		document.getElementById("total").innerHTML="Total Cost: &#x20B9;"+temp2+"/-";
+	</script>
+</body>
+</html>
