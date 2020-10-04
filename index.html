@@ -715,6 +715,7 @@
 		// localStorage.setItem("inner",temp1);
 		function order(){
 			var t=document.getElementById("text").value;
+			var tot;
 			// alert(t);
 			if(t.length==0){
 				t=parseInt("1");
@@ -743,7 +744,7 @@
 			sec=n.getSeconds();
 			var tempr=document.getElementById("name").innerHTML+" "+"("+localStorage.getItem("model")+") "+"for "+t+"hr(s) ("+m + "/" + d + "/" + y+" "+h+":"+min+":"+sec+")"+" cost: "+tot;
 			localStorage.setItem("inner",tempr);
-			localStorage.setItem("total",tot);
+			localStorage.setItem("totalcost",tot);
 			window.open("bill.html");
 		}
 	</script>
@@ -754,27 +755,3 @@
 	</script>
 </body>
 </html>
-<!-- <div class="i1" id="i1">
-	<div class="model">
-		<span class="c">
-			Rover1 (model1)
-		</span>
-	</div>
-	<div class="ofor">
-		<div class="tm">
-			<span class="d">
-				for 3 hr(s)
-			</span>
-		</div>
-		<hr>
-		<div style="display: flex;" class="t">
-			<div class="time" id="time">
-				
-			</div>
-			<div class="date" id="date">
-				
-			</div>
-		</div>
-	</div>
-</div>
-<hr> -->
